@@ -4,7 +4,6 @@
 	<%= button_to "Admin Edit", edit_admin_registration_path, :class => "button medium", :method => :get %>
   	<%= button_to "Admin Logout", destroy_admin_session_path, :class => "button medium", :method => 'delete' %>
 <% elsif student_signed_in? %>
-	<%= button_to "Student Profile", student_show_path(id: @student), :class => "button medium", :method => :get %>
 	<%= button_to "Student Edit", edit_student_registration_path, :class => "button medium", :method => :get %>
 	<%= button_to "Student Logout", destroy_student_session_path, :class => "button medium", :method => 'delete' %>
 <% else %>
@@ -14,10 +13,22 @@
 	<%= button_to "Student Signup", new_student_registration_path, :class => "button medium", :method => :get %>
 <% end %>
 
-
-
-
-
-
 <p><%= Student.count %> student(s) registered</p>
 <p><%= Admin.count %> admin(s) registered</p>
+
+<div class="container">
+  <div class="row">
+    <h3>Students</h3>
+    <div class="column">
+      <table class="table">
+        <tbody>
+          <% @students.each do |student| %>
+            <tr>
+              <%= render student %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
