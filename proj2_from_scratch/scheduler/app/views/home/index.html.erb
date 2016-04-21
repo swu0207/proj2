@@ -1,1 +1,23 @@
-<h1>Scheduler</h1>
+<h3>Scheduler</h3>
+
+<% if admin_signed_in? %>
+	<%= button_to "Admin Edit", edit_admin_registration_path, :class => "button medium", :method => :get %>
+  	<%= button_to "Admin Logout", destroy_admin_session_path, :class => "button medium", :method => 'delete' %>
+<% elsif student_signed_in? %>
+	<%= button_to "Student Profile", student_show_path(id: @student), :class => "button medium", :method => :get %>
+	<%= button_to "Student Edit", edit_student_registration_path, :class => "button medium", :method => :get %>
+	<%= button_to "Student Logout", destroy_student_session_path, :class => "button medium", :method => 'delete' %>
+<% else %>
+  	<%= button_to "Admin Login", new_admin_session_path, :class => "button medium", :method => :get %>
+	<%= button_to "Admin Signup", new_admin_registration_path, :class => "button medium", :method => :get %>
+	<%= button_to "Student Login", new_student_session_path, :class => "button medium", :method => :get %>
+	<%= button_to "Student Signup", new_student_registration_path, :class => "button medium", :method => :get %>
+<% end %>
+
+
+
+
+
+
+<p><%= Student.count %> student(s) registered</p>
+<p><%= Admin.count %> admin(s) registered</p>
