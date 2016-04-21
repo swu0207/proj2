@@ -1,8 +1,18 @@
-<h3>Welcome to PokePortal</h3>
-<p><%= link_to 'Trainers:', trainers_path %> <%= Trainer.count %> registered</p>
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,700,500,300,900' rel='stylesheet' type='text/css'>
+<%= stylesheet_link_tag "../../app/assets/stylesheets/index.css.scss" %>
+<%= javascript_include_tag "../../app/assets/javascripts/index.js" %>
+<!-- <p><%= link_to 'Trainers:', trainers_path %> <%= Trainer.count %> registered</p> -->
 
-<% if @pokemon and current_trainer %>
-  <p> A wild <%= @pokemon.name %> has appeared!</p>
-  <!-- REPLACE THIS LINE BELOW -->
-  <div class="button medium"> Throw a Pokeball! </div>
-<% end %>
+<!-- <div class="parallax">
+  <h1>Scheduler</h1>
+</div> -->
+
+<div class="container">
+    <!-- photo and title -->
+    <div class="parallax">
+        <div class="title">Title Here</div>
+    </div>
+    <!-- everything else -->
+    <div class="bottom">
+        <div class="content">Lorem dim sum Sauteed string beans beef shank pork spiced salt baked octopus Fung zao Ngao yuk kau Pai gwut Ma lai go. Pai gwut Ma lai go Do fu fa Shaomai Congee Shangai steam buns chicken feet mini egg tarts. Beef shank pork spiced salt baked octopus Fung zao Ngao yuk kau Pai gwut Ma lai go. Jiu cai bau Zhaliang Pei guen Lo baak gou Taro cake Deep fried pumpkin and egg-yolk ball. Spiced salt baked octopus Fung zao Ngao yuk kau Pai gwut Ma lai go Do fu fa Shaomai Congee. Egg custard tarts Popular shumai cha siu bao A creamy mango pudding Chiu-chao fan guo Siu mai Haam sui gau. Black sesame soft ball deep fried bean curd skin rolls rice noodle roll deep fried crab claw soup dumpling. Steamed har gow shrimp dumpling Wu gok Cha siu bao Lo mai gai baked barbecue pork bao Egg custard tarts Popular shumai. Tofu with syrup Jin deui Chicken feet Potstickers stir fried radish cake. Beef shank pork spiced salt baked octopus Fung zao Ngao yuk kau Pai gwut Ma lai go. Water chestnut cake bitter melon beef dumplings turnip cake leek dumplings deep fried taro turnover Cha siu sou Cheong fan pan fried bitter melon beef dumpling mango pudding. Spiced salt baked octopus Fung zao Ngao yuk kau Pai gwut Ma lai go. With zhu hao sauce crispy yam puff crispy dragon roll honeydew puree with sago deep fried garlicky fish ball. Jiu cai bau Zhaliang Pei guen Lo baak gou Taro cake. Stir fried radish cake Steamed Bun with Butter Cream hot raw fish slices porridge traditional steamed glutinous rice with zhu hao sauce crispy yam puff crispy dragon roll honeydew puree with sago deep fried garlicky fish ball chee cheong fun with barbecued pork. Deep fried seaweed roll BBQ pork puff Pan friend pork dumpling Pot sticker water chestnut cake bitter melon beef dumplings turnip cake leek dumplings deep fried taro turnover. BBQ pork puff Pan friend pork dumpling Pot sticker water chestnut cake bitter melon beef dumplings turnip cake.</div>
+    </div>

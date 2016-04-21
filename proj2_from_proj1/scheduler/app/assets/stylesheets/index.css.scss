@@ -1,0 +1,61 @@
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+.parallax {
+    /* YOUR CODE BELOW */
+    position: fixed;
+}
+
+.bottom {
+    /* YOUR CODE BELOW */
+    position: relative;
+    top: 300px;
+}
+
+
+/* other styles below */
+.parallax {
+    /* other styling */
+    margin-top: 50px;
+    height: 300px;
+    width: 100%;
+    background-image: image-url("ucb-tower.jpg");
+    background-size: 100%;
+}
+
+ .container {
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+}
+.image {
+    height: 100%;
+    width: 50%;
+    object-fit: cover;
+}
+.content {
+    background: #eee;
+    font-weight: 200;
+    height: 700px;
+    line-height: 24px;
+    padding: 20px 35px;
+    position: relative;
+    padding-bottom: 1000px;
+}
+body {
+    font-family: Roboto;
+    margin: 0;
+}
+div {
+    box-sizing: border-box;
+}
+.title {
+    color: white;
+    font-size: 30px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
