@@ -7,8 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+	<header>
+      <%= render 'layouts/navigation' %>
+    </header>
+    <!-- Uncomment below only if we want to implement messages, should focus on other things first -->
+    <main role="main">
+       <%= render 'layouts/messages' %>
+       <%= yield %>
+    </main> 
 </body>
 </html>
