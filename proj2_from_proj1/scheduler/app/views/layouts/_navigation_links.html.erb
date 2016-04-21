@@ -3,8 +3,8 @@
   <li><%= link_to 'Edit Your Profile', edit_trainer_registration_path %></li>
   <li><%= link_to 'Log Out', destroy_trainer_session_path, :method=>'delete' %></li>
 <% else %>
-  <li><%= link_to 'Log In', new_trainer_session_path %></li>
-  <li><%= link_to 'Join', new_trainer_registration_path %></li>
+  <li><%= link_to 'Log In', new_student_session_path %></li>
+  <li><%= link_to 'Join', new_student_registration_path %></li>
 <% end %>
 
 
