@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   get 'admins/:id' => 'admins#show', as: 'admin_show'
   get "courses/new" => "courses#new", as: 'course_new'
   post "courses" => "courses#create"
+  
+  resources :courses do
+    collection { post :import }
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

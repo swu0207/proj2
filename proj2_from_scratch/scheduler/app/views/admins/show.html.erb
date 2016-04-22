@@ -7,4 +7,11 @@
 	<%= button_to "Add Course", course_new_path, :class => "button medium", :method => :get %>
 <% end %>
 
+<h4>Import Courses</h4>
+
+<%= form_tag import_courses_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
+
 <%= link_to 'back', root_path %>
