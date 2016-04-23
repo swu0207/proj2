@@ -1,4 +1,12 @@
 class CoursesController < ApplicationController
+	def index
+		@courses = Course.all
+	end
+	
+	def show
+    	@course = Course.find(params[:id])
+    end
+	
 	def new
 		@course = Course.new
 	end
@@ -13,10 +21,18 @@ class CoursesController < ApplicationController
 			redirect_to admin_show_path(id: current_admin.id)
 		end
 	end
+  
+  	def import
+  		Course.import(params[:file])
+  		redirect_to admin_show_path(id: current_admin.id), notice: "Courses imported."
+	end
+	
 
 	private
 
   	def course_params
     	params.require(:course).permit(:name, :day, :time, :location, :description)
   	end
+
+
 end

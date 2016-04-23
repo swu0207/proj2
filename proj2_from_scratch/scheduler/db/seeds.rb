@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# Make initial Admin
+%w(Morgan Scarlett Erica Amanda Avie).each do |name|
+  Admin.create name: name, email: name+"@berkeley.edu", password: 'password'
+end
+
+# Make initial Student
+%w(Howard Clarissa Jenn Shirley).each do |name|
+  Student.create name: name, email: name+"@berkeley.edu", password: 'password'
+end

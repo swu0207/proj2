@@ -1,25 +1,31 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  time: 1
-  monday: false
-  tuesday: false
-  wednesday: false
-  thursday: false
-  friday: false
-  location: MyString
-  name: MyString
-  description: MyString
-  admin_id: 
+  term: MyString
+  class_nbr: 1
+  subject: MyString
+  nbr: MyString
+  section: 1
+  type: 
+  title: MyString
+  units: 1
+  facility: MyString
+  days: MyString
+  start_time: MyString
+  end_time: MyString
+  instructor: MyString
 
 two:
-  time: 1
-  monday: false
-  tuesday: false
-  wednesday: false
-  thursday: false
-  friday: false
-  location: MyString
-  name: MyString
-  description: MyString
-  admin_id: 
+  term: MyString
+  class_nbr: 1
+  subject: MyString
+  nbr: MyString
+  section: 1
+  type: 
+  title: MyString
+  units: 1
+  facility: MyString
+  days: MyString
+  start_time: MyString
+  end_time: MyString
+  instructor: MyString
