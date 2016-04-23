@@ -2,6 +2,15 @@ class CoursesController < ApplicationController
 	def index
 		@courses = Course.all
 	end
+
+	# def index
+ #      @courses = Course.order(:subject)
+ #   	  respond_to do |format|
+ #      	format.html
+ #      	format.csv { send_data @courses.to_csv }
+ #      	format.xls # { send_data @products.to_csv(col_sep: "\t") }
+ #      end
+ #  	end
 	
 	def show
     	@course = Course.find(params[:id])
@@ -31,12 +40,19 @@ class CoursesController < ApplicationController
 	private
 
   	def course_params
-    	params.require(:course).permit(:name)
-    	params.require(:course).permit(:day)
-    	params.require(:course).permit(:time)
-    	params.require(:course).permit(:location)
-    	params.require(:course).permit(:description)
+    	params.require(:course).permit(:term)
+    	params.require(:course).permit(:class_nbr)
+    	params.require(:course).permit(:subject)
+    	params.require(:course).permit(:nbr)
+    	params.require(:course).permit(:section)
+    	params.require(:course).permit(:type)
+    	params.require(:course).permit(:title)
+    	params.require(:course).permit(:units)
+    	params.require(:course).permit(:facility)
+    	params.require(:course).permit(:days)
+    	params.require(:course).permit(:start_time)
+    	params.require(:course).permit(:end_time)
+    	params.require(:course).permit(:instructor)
   	end
-
 
 end

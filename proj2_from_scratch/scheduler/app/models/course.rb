@@ -1,6 +1,7 @@
 class Course < ActiveRecord::Base
   belongs_to :admin
   # belongs_to :schedule
+  #attr_accessible :term, :class_nbr, :subject, :nbr, :section, :type, :title, :units, :facility, :days, :start_time, :end_time, :instructor
 
 
   def self.import(file)
@@ -9,7 +10,7 @@ class Course < ActiveRecord::Base
   	(2..spreadsheet.last_row).each do |i|
     	row = Hash[[header, spreadsheet.row(i)].transpose]
     	course = find_by_id(row["id"]) || new
-    	# course.attributes = row.to_hash.slice(*accessible_attributes)
+    	course.attributes = row.to_hash.slice(*course_params)
     	course.save!
   	end
   end
