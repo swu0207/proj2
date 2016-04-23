@@ -1,12 +1,42 @@
-<%# navigation styled for Zurb Foundation 5 %>
-<nav class="top-bar" data-topbar>
-  <ul class="title-area">
-    <li class="name"><%= link_to 'Scheduler', root_path %></li>
-    <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+<nav class="navbar navbar-default navbar-inverse">
+<div class="container-fluid">
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="navbar-header">
+  <a class="navbar-brand" href="/">Scheduler</a>
+</div>
+<ul class="nav navbar-nav navbar-left">
+  <li><a href="/courses">Courses</a></li>
+</ul>
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  <ul class="nav navbar-nav navbar-right">
+    <% if current_student %>
+    <li><a href="#"><%= current_user.email %></a></li>
+    <li> <%= link_to "Logout", destroy_student_session_path, method: :delete %> </li>
+    <% else %>
+      <% if current_admin %>
+      <li><a href="#"><%= current_admin.email %></a></li>
+      <li> <%= link_to "Logout", destroy_admin_session_path, method: :delete %> </li>
+      <% else %>
+      <!-- <li> <%= link_to "Admin Login", admin_session_path %> </li>
+      <li> <%= link_to "Student Login", student_session_path %> </li>
+      <li> <%= link_to "Admin Signup", new_admin_registration_path %> </li>
+      <li> <%= link_to "Student Signup", new_student_registration_path %> </li> -->
+      <li> <%= link_to "Log In", home_login_path %> </li>
+      <li> <%= link_to "Sign Up", home_signup_path %> </li>
+
+      <% end %>
+    <% end %>
+
   </ul>
+</div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav>
+
+<!-- <%# navigation styled for Zurb Foundation 5 %>
+<nav class="top-bar" data-topbar>
   <div class="top-bar-section">
     <ul class="right">
       <%= render 'layouts/navigation_links' %>
     </ul>
   </div>
-</nav>
+</nav> -->
