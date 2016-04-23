@@ -40,6 +40,7 @@ class CoursesController < ApplicationController
 	private
 
   	def course_params
+# <<<<<<< HEAD
     	params.require(:course).permit(:term)
     	params.require(:course).permit(:class_nbr)
     	params.require(:course).permit(:subject)
@@ -53,6 +54,9 @@ class CoursesController < ApplicationController
     	params.require(:course).permit(:start_time)
     	params.require(:course).permit(:end_time)
     	params.require(:course).permit(:instructor)
-  	end
+# =======
+#     	params.require(:course).permit(:name, :day, :time, :location, :description)
+# >>>>>>> 40a0789bb425e6a3de21fa7624111788b3fea05c
+#   	end
 
 end

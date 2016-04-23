@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :students
   devise_for :admins
   root 'home#index'
+  get '/login' => 'home#login', as: 'home_login'
+  get '/signup' => 'home#signup', as: 'home_signup' 
   get 'students/:id' => 'students#show', as: 'student_show'
   get 'admins/:id' => 'admins#show', as: 'admin_show'
   get "courses/new" => "courses#new", as: 'course_new'

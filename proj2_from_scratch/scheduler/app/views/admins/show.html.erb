@@ -1,8 +1,6 @@
 <h3>Admin</h3>
 <p>Email: <%= @admin.email if @admin.email %></p>
 
-
-
 <% if admin_signed_in? %>
 	<%= button_to "Add Course", course_new_path, :class => "button medium", :method => :get %>
 <% end %>
