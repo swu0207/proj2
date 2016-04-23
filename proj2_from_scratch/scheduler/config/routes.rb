@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   get 'students/:id' => 'students#show', as: 'student_show'
   get 'admins/:id' => 'admins#show', as: 'admin_show'
   get "courses/new" => "courses#new", as: 'course_new'
+  get "courses" => "courses#index", as: 'course_index'
   post "courses" => "courses#create"
-  
+
   resources :courses do
     collection { post :import }
   end

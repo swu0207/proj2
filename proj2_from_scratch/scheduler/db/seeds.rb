@@ -15,4 +15,3 @@ end
 %w(Howard Clarissa Jenn Shirley).each do |name|
   Student.create name: name, email: name+"@berkeley.edu", password: 'password'
 end
-

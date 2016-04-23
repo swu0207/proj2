@@ -24,16 +24,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 
-gem 'heart_seed'
-# seed util (convert excel to yaml and insert yaml to db)
-
 gem 'roo'
 gem 'roo-xls'
 # Roo::Xls add support for legacy Excel file standards to Roo.
 
 gem "iconv", "~> 1.0.3"
-
-# gem "searchlogic"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

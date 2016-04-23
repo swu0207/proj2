@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421224031) do
+ActiveRecord::Schema.define(version: 20160422224217) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -33,22 +33,22 @@ ActiveRecord::Schema.define(version: 20160421224031) do
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
   create_table "courses", force: :cascade do |t|
-    t.integer  "time"
-    t.boolean  "monday"
-    t.boolean  "tuesday"
-    t.boolean  "wednesday"
-    t.boolean  "thursday"
-    t.boolean  "friday"
-    t.string   "location"
-    t.string   "name"
-    t.string   "description"
-    t.integer  "admin_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.string   "day"
+    t.string   "term"
+    t.integer  "class_nbr"
+    t.string   "subject"
+    t.string   "nbr"
+    t.integer  "section"
+    t.string   "type"
+    t.string   "title"
+    t.integer  "units"
+    t.string   "facility"
+    t.string   "days"
+    t.string   "start_time"
+    t.string   "end_time"
+    t.string   "instructor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
-
-  add_index "courses", ["admin_id"], name: "index_courses_on_admin_id"
 
   create_table "schedules", force: :cascade do |t|
     t.string   "name"
