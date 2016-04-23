@@ -17,10 +17,6 @@ class CoursesController < ApplicationController
 	private
 
   	def course_params
-    	params.require(:course).permit(:name)
-    	params.require(:course).permit(:day)
-    	params.require(:course).permit(:time)
-    	params.require(:course).permit(:location)
-    	params.require(:course).permit(:description)
+    	params.require(:course).permit(:name, :day, :time, :location, :description)
   	end
 end
