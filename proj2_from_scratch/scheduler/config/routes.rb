@@ -3,12 +3,15 @@ Rails.application.routes.draw do
   devise_for :admins
   root 'home#index'
   get '/login' => 'home#login', as: 'home_login'
-  get '/signup' => 'home#signup', as: 'home_signup' 
+  get '/signup' => 'home#signup', as: 'home_signup'
   get 'students/:id' => 'students#show', as: 'student_show'
   get 'admins/:id' => 'admins#show', as: 'admin_show'
   get "courses/new" => "courses#new", as: 'course_new'
   get "courses" => "courses#index", as: 'course_index'
   post "courses" => "courses#create"
+  get "schedules/new" => "schedules#new", as: 'schedule_new'
+  get "schedules" => "schedules#index", as: 'schedule_index'
+  post "schedules" => "schedules#create"
 
   resources :courses do
     collection { post :import }

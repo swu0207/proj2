@@ -1,8 +1,6 @@
 class Course < ActiveRecord::Base
-  belongs_to :admin
-  # belongs_to :schedule
-  #attr_accessible :term, :class_nbr, :subject, :nbr, :section, :type, :title, :units, :facility, :days, :start_time, :end_time, :instructor
-
+  # belongs_to :admin
+  belongs_to :schedule
 
   def self.import(file)
   	spreadsheet = open_spreadsheet(file)

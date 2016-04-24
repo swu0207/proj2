@@ -1,4 +1,9 @@
-<h3>Student</h3>
-<p>Email: <%= @student.email if @student.email %></p>
 
-<%= link_to 'back', root_path %>
+<div style="text-align: center; margin-top: 50px;">
+  <h3>Student</h3>
+  <!-- <p>Name: <%= @student.name if @student.name %></p> -->
+  <p>Email: <%= @student.email if @student.email %></p>
+  <div style="margin-bottom: 100px;"> <img src="http://placehold.it/150x150"> <br></div>
+  <%= button_to "Add New Schedule", schedule_new_path, :class => "button medium", :method => :get %>
+  <%= button_to "View Schedules", schedule_index_path, :class => "button medium", :method => :get %>
+</div>

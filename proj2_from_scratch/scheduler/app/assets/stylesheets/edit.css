@@ -1,0 +1,70 @@
+.edit-container {
+  margin-top: 40px;
+  width: 400px;
+  margin: 0 auto;
+  background: rgba(161, 201, 221, 0.6);
+  border-radius: 25px;
+  padding: 15px;
+}
+
+.signup-container {
+  width: 400px;
+  margin: 0 auto;
+  background: rgba(161, 201, 221, 1);
+  border-radius: 25px;
+  padding: 25px;
+}
+
+.choose-container {
+  width: 600px;
+  margin: 0 auto;
+  background: rgba(161, 201, 221, 1);
+  border-radius: 25px;
+  padding: 25px;
+  text-align: center;
+}
+
+.button {
+	background-color: rgb(112, 165, 191);
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:18px;
+	padding:9px 23px;
+  margin-bottom: 10px;
+  border: none;
+}
+.button:hover {
+	background-color:#0688fa;
+}
+
+.button:active {
+	position:relative;
+	top:1px;
+}
+
+.home-header {
+  font-size: 150px;
+  text-align: center;
+  font-family: 'Luckiest Guy', sans-serif;
+  color: white;
+  /*margin-top: 150px;*/
+  margin-top: -20px;
+  padding-top: 50px;
+  padding-left: 200px;
+  opacity: 0.9;
+}
+
+.home-page {
+  background: url("home-page-banner.jpg");
+  background-repeat: no-repeat;
+  opacity: 0.7;
+}
+
+.navbar-styling {
+  background-color: rgb(212, 230, 243);
+}

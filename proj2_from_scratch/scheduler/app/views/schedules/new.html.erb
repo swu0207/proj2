@@ -1,14 +1,13 @@
 
 <div class="container">
   <div class="row">
-    <h2>Browse by Department</h2>
+    <h3>Create a New Schedule!</h3>
     <div class="column">
       <table class="table">
         <tbody>
-          <% @courses.each do |c| %>
-            <tr>
-              <%= c.description %><br>
-            </tr>
+          <%= form_for @schedule, :url => schedules_path do |c| %>
+
+              <%= c.submit 'Submit', :class => 'button right' %>
           <% end %>
         </tbody>
       </table>
