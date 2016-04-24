@@ -57,6 +57,6 @@ class CoursesController < ApplicationController
 # =======
 #     	params.require(:course).permit(:name, :day, :time, :location, :description)
 # >>>>>>> 40a0789bb425e6a3de21fa7624111788b3fea05c
-#   	end
+  	end
 
 end
