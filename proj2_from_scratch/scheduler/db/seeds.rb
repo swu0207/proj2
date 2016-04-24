@@ -10,7 +10,7 @@ require 'roo'
  
 def fetch_excel_data
       ex = Roo::Excel.new("public/scheduleFall2016.xls")
-      ex.default_sheet = ex.sheets[0]              #Mention the sheet number (0 is the first sheet, 1 is second sheet, etc.)
+      ex.default_sheet = ex.sheets[1]              #Mention the sheet number (0 is the first sheet, 1 is second sheet, etc.)
       2.upto(7467) do | line |                              #Start and end of rows you want to include
       db_column1 = ex.cell(line,'A')                   #Column A in spreadsheet   
       db_column2 = ex.cell(line,'B')
@@ -26,8 +26,8 @@ def fetch_excel_data
       db_column12 = ex.cell(line,'L')
       db_column13 = ex.cell(line,'M')
  
-      x = Course.new(:term => db_column1, :class_nbr => db_column2, :subject => db_column3, :nbr => db_column4, :section => db_column5, :type => db_column6, :title => db_column7, :units => db_column8, :facility => db_column9, :days => db_column10, :start_time => db_column11, :end_time => db_column12, :instructor => db_column13)
- 	  x.save
+      Course.create term: db_column1, class_nbr: db_column2, subject: db_column3, nbr: db_column4, section: db_column5, type: db_column6, title: db_column7, units: db_column8, facility: db_column9, days: db_column10, start_time: db_column11, end_time: db_column12, instructor: db_column13
+  end
 end
 
 
