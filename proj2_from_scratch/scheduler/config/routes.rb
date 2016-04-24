@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'admins/:id' => 'admins#show', as: 'admin_show'
   get "courses/new" => "courses#new", as: 'course_new'
   get "courses" => "courses#index", as: 'course_index'
+  get "courses/show" => "courses#show", as: 'course_show'
   post "courses" => "courses#create"
   get "schedules/new" => "schedules#new", as: 'schedule_new'
   get "schedules" => "schedules#index", as: 'schedule_index'

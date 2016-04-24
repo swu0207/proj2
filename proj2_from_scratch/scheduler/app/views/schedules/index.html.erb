@@ -7,7 +7,10 @@
         <tbody>
           <% @schedules.each do |s| %>
             <tr>
-              <%= s.courses %>
+              <% if s.email == current_student.email %>
+                <%= s.id %>
+                <%= s.courses %> <br>
+              <% end %>
             </tr>
           <% end %>
         </tbody>

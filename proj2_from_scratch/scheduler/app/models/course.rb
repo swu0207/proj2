@@ -2,6 +2,11 @@ class Course < ActiveRecord::Base
   # belongs_to :admin
   belongs_to :schedule
 
+  def self.search(search)
+    where("subject LIKE ? OR title LIKE ? OR description LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+    # add more ___ LIKE ? to allow for searching in more columns of the courses table
+  end
+
   def self.import(file)
   	spreadsheet = open_spreadsheet(file)
   	header = spreadsheet.row(1)
