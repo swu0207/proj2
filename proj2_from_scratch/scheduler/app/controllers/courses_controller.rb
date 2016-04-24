@@ -48,5 +48,14 @@ class CoursesController < ApplicationController
     	params.require(:course).permit(:start_time)
     	params.require(:course).permit(:end_time)
     	params.require(:course).permit(:instructor)
-		end
+# <<<<<<< HEAD
+# =======
+#     	params.require(:course).permit(:name, :day, :time, :location, :description)
+# >>>>>>> 40a0789bb425e6a3de21fa7624111788b3fea05c
+  	end
+
 end
+# =======
+# 		end
+# end
+# >>>>>>> 264d0d3acc18760796fd08982205c8f567f92439
