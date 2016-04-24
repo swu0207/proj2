@@ -1,12 +1,7 @@
 class CoursesController < ApplicationController
 
 	def index
-      @courses = Course.order(:subject)
-   	  respond_to do |format|
-      	format.html
-      	format.csv { send_data @courses.to_csv }
-      	format.xls # { send_data @products.to_csv(col_sep: "\t") }
-      end
+			@courses = Course.all
   	end
 
 	def show
@@ -48,5 +43,5 @@ class CoursesController < ApplicationController
     	params.require(:course).permit(:start_time)
     	params.require(:course).permit(:end_time)
     	params.require(:course).permit(:instructor)
-
+		end
 end
