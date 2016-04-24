@@ -1,55 +1,42 @@
-<h1 class="home-header"> SCHEDULER </h1>
 
-<div style="text-align: center;">
-<p><%= Student.count %> student(s) registered</p>
+
+
+<div class="home-page" style="text-align: center;">
+<!-- <p><%= Student.count %> student(s) registered</p>
 <p><%= Admin.count %> admin(s) registered</p>
-<p><%= Course.count %> course(s) added </p>
+<p><%= Course.count %> course(s) added </p> -->
+  <h1 class="home-header"> SCHEDULER </h1>
+    <div class="container">
+      <div class="row">
+        <h3>Students</h3>
+        <div class="column">
+          <table class="table">
+            <tbody>
+              <% @students.each do |student| %>
+                <tr>
+                  <%= render student %>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
 
-<p>
-  <% if admin_signed_in? %>
-  	<%= button_to "Add Course", course_new_path, :class => "button medium", :method => :get %>
-  <% end %>
-</p>
-
-<p>
-  <% if student_signed_in? %>
-    <%= button_to "Add New Schedule", schedule_new_path, :class => "button medium", :method => :get %>
-    <%= button_to "View Schedules", schedule_index_path, :class => "button medium", :method => :get %>
-
-  <% end %>
-</p>
-
-<div class="container">
-  <div class="row">
-    <h3>Students</h3>
-    <div class="column">
-      <table class="table">
-        <tbody>
-          <% @students.each do |student| %>
-            <tr>
-              <%= render student %>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+    <div class="container">
+      <div class="row">
+        <h3>Admins</h3>
+        <div class="column">
+          <table class="table">
+            <tbody>
+              <% @admins.each do |admin| %>
+                <tr>
+                  <%= render admin %>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-
-<div class="container">
-  <div class="row">
-    <h3>Admins</h3>
-    <div class="column">
-      <table class="table">
-        <tbody>
-          <% @admins.each do |admin| %>
-            <tr>
-              <%= render admin %>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
-</div>

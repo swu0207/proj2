@@ -17,7 +17,7 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.create
     @schedule.email = current_student.email
     if @schedule.save
-      # redirect_to 'index'
+      redirect_to schedule_index_path
     else
       flash[:error] = @schedule.errors.full_messages.to_sentence
       render "new"

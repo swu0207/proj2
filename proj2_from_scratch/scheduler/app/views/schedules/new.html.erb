@@ -1,5 +1,16 @@
-<h3>Create a New Schedule!</h3>
-<%= form_for @schedule, :url => schedules_path do |c| %>
 
-    <%= c.submit 'Submit', :class => 'button right' %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <h3>Create a New Schedule!</h3>
+    <div class="column">
+      <table class="table">
+        <tbody>
+          <%= form_for @schedule, :url => schedules_path do |c| %>
+
+              <%= c.submit 'Submit', :class => 'button right' %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
