@@ -1,13 +1,13 @@
 
 <div class="container">
   <div class="row">
-    <h2>Browse by Department</h2>
+    <h2>All Schedules</h2>
     <div class="column">
       <table class="table">
         <tbody>
-          <% @courses.each do |c| %>
+          <% @schedules.each do |s| %>
             <tr>
-              <%= c.description %><br>
+              <%= s.id %>
             </tr>
           <% end %>
         </tbody>

@@ -1,8 +1,23 @@
+<h1 class="home-header"> SCHEDULER </h1>
+
+<div style="text-align: center;">
 <p><%= Student.count %> student(s) registered</p>
 <p><%= Admin.count %> admin(s) registered</p>
 <p><%= Course.count %> course(s) added </p>
 
-<%= link_to "Course Page", course_index_path %>
+<p>
+  <% if admin_signed_in? %>
+  	<%= button_to "Add Course", course_new_path, :class => "button medium", :method => :get %>
+  <% end %>
+</p>
+
+<p>
+  <% if student_signed_in? %>
+    <%= button_to "Add New Schedule", schedule_new_path, :class => "button medium", :method => :get %>
+    <%= button_to "View Schedules", schedule_index_path, :class => "button medium", :method => :get %>
+
+  <% end %>
+</p>
 
 <div class="container">
   <div class="row">
@@ -36,4 +51,5 @@
       </table>
     </div>
   </div>
+</div>
 </div>

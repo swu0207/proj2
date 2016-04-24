@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160423063215) do
+ActiveRecord::Schema.define(version: 20160423083530) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20160423063215) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "name"
-    t.boolean  "admin"
   end
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
@@ -47,8 +46,11 @@ ActiveRecord::Schema.define(version: 20160423063215) do
     t.string   "start_time"
     t.string   "end_time"
     t.string   "instructor"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "schedule_id"
+    t.string   "course_name"
+    t.string   "description"
   end
 
   create_table "schedules", force: :cascade do |t|
@@ -57,6 +59,7 @@ ActiveRecord::Schema.define(version: 20160423063215) do
     t.integer  "num_classes"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "email"
   end
 
   add_index "schedules", ["student_id"], name: "index_schedules_on_student_id"
@@ -75,7 +78,6 @@ ActiveRecord::Schema.define(version: 20160423063215) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "name"
-    t.boolean  "admin"
   end
 
   add_index "students", ["email"], name: "index_students_on_email", unique: true

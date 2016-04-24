@@ -1,24 +1,35 @@
 <h3>Create a New Course!</h3>
 <%= form_for @course, :url => courses_path do |c| %>
 	<div class="form-group">
-      <%= c.label :name, 'Name' %>
-      <%= c.text_field :name, :autofocus => true, class: 'form-control' %>
+      <%= c.label :title, 'Title' %>
+      <%= c.text_field :title, :autofocus => true, class: 'form-control' %>
     </div>
     <div class="form-group">
-      <%= c.label :day, 'Day (format: "Monday")' %>
-      <%= c.text_field :day, :autofocus => true, class: 'form-control' %>
+      <%= c.label :days, 'Days (format: "Monday, Wednesday")' %>
+      <%= c.text_field :days, :autofocus => true, class: 'form-control' %>
     </div>
     <div class="form-group">
-      <%= c.label :time, 'Time (format: "9")' %>
-      <%= c.text_field :time, :autofocus => true, class: 'form-control' %>
+      <%= c.label :start_time, 'Time Start (format: "9")' %>
+      <%= c.text_field :start_time, :autofocus => true, class: 'form-control' %>
     </div>
     <div class="form-group">
-      <%= c.label :location, 'Location' %>
-      <%= c.text_field :location, :autofocus => true, class: 'form-control' %>
+      <%= c.label :end_time, 'Time End (format: "9")' %>
+      <%= c.text_field :end_time, :autofocus => true, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= c.label :facility, 'Location' %>
+      <%= c.text_field :facility, :autofocus => true, class: 'form-control' %>
     </div>
     <div class="form-group">
       <%= c.label :description, 'Description' %>
       <%= c.text_field :description, :autofocus => true, class: 'form-control' %>
     </div>
     <%= c.submit 'Submit', :class => 'button right' %>
+<% end %>
+
+<%= simple_form_for @course do |f| %>
+  <%= f.input :title, label: "Name of Class" %>
+  <%= f.input :days, label: "Days" %>
+  <%= f.input :description, label: "Description" %>
+  <%= f.button :submit %>
 <% end %>

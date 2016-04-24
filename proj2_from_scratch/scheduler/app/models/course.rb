@@ -1,6 +1,6 @@
 class Course < ActiveRecord::Base
-  belongs_to :admin
-  # belongs_to :schedule
+  # belongs_to :admin
+  belongs_to :schedule
 
 
   def self.import(file)

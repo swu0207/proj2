@@ -5,7 +5,7 @@
 	<%= button_to "Student Edit", edit_student_registration_path, :class => "button medium", :method => :get %>
 	<%= button_to "Student Logout", destroy_student_session_path, :class => "button medium", :method => 'delete' %>
 <% else %>
-  	<%= button_to "Admin Login", new_admin_session_path, :class => "button medium", :method => :get %>
+  <%= button_to "Admin Login", new_admin_session_path, :class => "button medium", :method => :get %>
 	<%= button_to "Admin Signup", new_admin_registration_path, :class => "button medium", :method => :get %>
 	<%= button_to "Student Login", new_student_session_path, :class => "button medium", :method => :get %>
 	<%= button_to "Student Signup", new_student_registration_path, :class => "button medium", :method => :get %>

@@ -1,3 +1,6 @@
+<%= stylesheet_link_tag "edit.css" %>
+
+<div class="signup-container">
 <div class="authform">
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :role => 'form'}) do |f| %>
     <h3>Sign up</h3>
@@ -20,4 +23,5 @@
     </div>
      <%= f.submit 'Sign up', :class => 'button right' %>
   <% end %>
+</div>
 </div>
