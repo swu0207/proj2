@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   get "courses/show" => "courses#show", as: 'course_show'
   post "courses" => "courses#create"
   get "schedules/new" => "schedules#new", as: 'schedule_new'
+  get "schedules/create" => "schedules#create", as: 'schedule_create'
   get "schedules" => "schedules#index", as: 'schedule_index'
+  patch "schedules/:id/add_class" => "schedules#add_class", as: 'add_class'
   post "schedules" => "schedules#create"
 
   resources :courses do

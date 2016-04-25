@@ -11,6 +11,19 @@ class SchedulesController < ApplicationController
 
   def new
     @schedule = Schedule.new
+    # might have to do .create
+    if params[:search]
+      @courses = Course.search(params[:search]).order("created_at DESC")
+    else
+      @courses = Course.all.order('created_at DESC')
+    end
+  end
+
+  def add_class
+    schedule = params[:schedule]
+    course = Course.find(params[:course_id])
+    @schedule.courses << course
+    redirect_to :back
   end
 
   def create
@@ -24,7 +37,7 @@ class SchedulesController < ApplicationController
     end
   end
 
-  # def schedule_params
-  #   params.require(:schedule).permit(:email)
-  # end
+  def schedule_params
+    params.require(:schedule).permit(:course_name)
+  end
 end

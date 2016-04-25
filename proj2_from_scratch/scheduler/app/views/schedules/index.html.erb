@@ -9,7 +9,7 @@
             <tr>
               <% if s.email == current_student.email %>
                 <%= s.id %>
-                <%= s.courses %> <br>
+                <%= s.courses.title %> <br>
               <% end %>
             </tr>
           <% end %>

@@ -1,9 +1,9 @@
 class Course < ActiveRecord::Base
   # belongs_to :admin
-  belongs_to :schedule
+  has_and_belongs_to_many :schedules
 
   def self.search(search)
-    where("subject LIKE ? OR title LIKE ? OR description LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
+    where("subject LIKE ? OR title LIKE ? OR course_name LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
     # add more ___ LIKE ? to allow for searching in more columns of the courses table
   end
 
