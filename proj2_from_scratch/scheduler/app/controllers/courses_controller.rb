@@ -13,6 +13,11 @@ class CoursesController < ApplicationController
     	@course = Course.find(params[:id])
     end
 
+	# def dapartment
+	# 	@course = Course.where(:subject == param[:subject])
+
+	# end
+
 	def new
 		@course = Course.new
 	end

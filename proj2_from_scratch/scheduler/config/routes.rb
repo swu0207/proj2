@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get "schedules/new" => "schedules#new", as: 'schedule_new'
   get "schedules" => "schedules#index", as: 'schedule_index'
   post "schedules" => "schedules#create"
+  get "courses/department/:subject" => "courses#department", as: 'course_department'
 
   resources :courses do
     collection { post :import }
