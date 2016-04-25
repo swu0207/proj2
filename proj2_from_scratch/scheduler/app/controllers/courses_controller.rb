@@ -1,17 +1,26 @@
 class CoursesController < ApplicationController
 
 	def index
-		@courses = Course.all
+		@courses = Course.all.order(subject: :asc)
+		@courses = Course.select(:subject).distinct
 	  if params[:search]
 	    @courses = Course.search(params[:search]).order("created_at DESC")
-	  else
-	    @courses = Course.all.order('created_at DESC')
+	  # else
+	  #   @courses = Course.all.order('created_at DESC')
 	  end
   	end
 
 	def show
     	@course = Course.find(params[:id])
     end
+
+	def department
+		puts 'sldkfjlksdj'
+		@subject = params[:subject]
+		@courses = Course.where(:subject => params[:subject])
+		puts @courses
+
+	end
 
 	def new
 		@course = Course.new
@@ -35,19 +44,19 @@ class CoursesController < ApplicationController
 
 	private
   	def course_params
-    	params.require(:course).permit(:term)
-    	params.require(:course).permit(:class_nbr)
-    	params.require(:course).permit(:subject)
-    	params.require(:course).permit(:nbr)
-    	params.require(:course).permit(:section)
-    	params.require(:course).permit(:type)
-    	params.require(:course).permit(:title)
-    	params.require(:course).permit(:units)
-    	params.require(:course).permit(:facility)
-    	params.require(:course).permit(:days)
-    	params.require(:course).permit(:start_time)
-    	params.require(:course).permit(:end_time)
-    	params.require(:course).permit(:instructor)
+    	# params.require(:course).permit(:term)
+    	# params.require(:course).permit(:class_nbr)
+    	params.require(:course).permit(:subject, :nbr, :title, :instructor)
+    	# params.require(:course).permit(:nbr)
+    	# params.require(:course).permit(:section)
+    	# params.require(:course).permit(:type)
+    	# params.require(:course).permit(:title)
+    	# params.require(:course).permit(:units)
+    	# params.require(:course).permit(:facility)
+    	# params.require(:course).permit(:days)
+    	# params.require(:course).permit(:start_time)
+    	# params.require(:course).permit(:end_time)
+    	# params.require(:course).permit(:instructor)
 # <<<<<<< HEAD
 # =======
 #     	params.require(:course).permit(:name, :day, :time, :location, :description)

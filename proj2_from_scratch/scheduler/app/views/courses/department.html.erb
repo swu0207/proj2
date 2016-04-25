@@ -1,13 +1,12 @@
-
 <div class="container">
   <div class="row">
-    <h2>Browse by Department</h2>
+    <h2><%= @subject %></h2>
     <div class="column">
       <table class="table">
         <tbody>
           <% @courses.each do |c| %>
             <tr>
-              <%= link_to c.subject, course_department_path(subject: c.subject) %> <br>
+              <%= c.subject %>, <%= c.nbr%>, <%= c.title%>, <%= c.instructor%> <br>
             </tr>
           <% end %>
         </tbody>

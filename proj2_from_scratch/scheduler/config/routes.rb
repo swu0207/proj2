@@ -13,12 +13,13 @@ Rails.application.routes.draw do
   get "schedules/new" => "schedules#new", as: 'schedule_new'
   get "schedules/create" => "schedules#create", as: 'schedule_create'
   get "schedules" => "schedules#index", as: 'schedule_index'
-  patch "schedules/:id/add_class" => "schedules#add_class", as: 'add_class'
+  get "schedules/add_class" => "schedules#add_class", as: 'add_class'
   post "schedules" => "schedules#create"
+  get "courses/department/:subject" => "courses#department", as: 'course_department'
 
-  resources :courses do
-    collection { post :import }
-  end
+  # resources :courses do
+  #   collection { post :import }
+  # end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
