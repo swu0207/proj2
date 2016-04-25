@@ -7,7 +7,7 @@
         <tbody>
           <% @courses.each do |c| %>
             <tr>
-              <%= c.subject %>, <%= c.nbr%>, <%= c.title%>, <%= c.instructor%> <br>
+              <%= link_to c.subject, course_department_path(subject: c.subject) %> <br>
             </tr>
           <% end %>
         </tbody>
@@ -15,3 +15,4 @@
     </div>
   </div>
 </div>
+

@@ -15,9 +15,9 @@ Rails.application.routes.draw do
   post "schedules" => "schedules#create"
   get "courses/department/:subject" => "courses#department", as: 'course_department'
 
-  resources :courses do
-    collection { post :import }
-  end
+  # resources :courses do
+  #   collection { post :import }
+  # end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

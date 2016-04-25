@@ -1,11 +1,12 @@
 class CoursesController < ApplicationController
 
 	def index
-		@courses = Course.all
+		@courses = Course.all.order(subject: :asc)
+		@courses = Course.select(:subject).distinct
 	  if params[:search]
 	    @courses = Course.search(params[:search]).order("created_at DESC")
-	  else
-	    @courses = Course.all.order('created_at DESC')
+	  # else
+	  #   @courses = Course.all.order('created_at DESC')
 	  end
   	end
 
@@ -13,10 +14,13 @@ class CoursesController < ApplicationController
     	@course = Course.find(params[:id])
     end
 
-	# def dapartment
-	# 	@course = Course.where(:subject == param[:subject])
+	def department
+		puts 'sldkfjlksdj'
+		@subject = params[:subject]
+		@courses = Course.where(:subject => params[:subject])
+		puts @courses
 
-	# end
+	end
 
 	def new
 		@course = Course.new
