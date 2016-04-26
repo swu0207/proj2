@@ -6,7 +6,7 @@
         <tbody>
           <% @courses.each do |c| %>
             <tr>
-              <%= c.subject %>, <%= c.nbr%>, <%= c.title%>, <%= c.instructor%> <br>
+              <%= c.subject %> <%= c.nbr%>: <%= c.title%> <br>
             </tr>
           <% end %>
         </tbody>

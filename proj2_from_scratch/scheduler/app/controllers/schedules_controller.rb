@@ -10,7 +10,8 @@ class SchedulesController < ApplicationController
     end
 
   def new
-    @schedule = Schedule.new
+    @schedule = Schedule.create
+    # @schedule = Schedule.new
     # might have to do .create
     if params[:search]
       @courses = Course.search(params[:search]).order("created_at DESC")
@@ -20,10 +21,16 @@ class SchedulesController < ApplicationController
   end
 
   def add_class
-    schedule = params[:schedule]
-    # course = Course.find(params[:id])
-    # @schedule.courses << course
-    redirect_to :back
+    if params[:schedule].nil?
+      @schedule = Schedule.new
+    else
+      @schedule = Schedule.find(params[:schedule])
+    end
+    # @schedule = params[:schedule]
+    course = Course.find(params[:id])
+    @schedule.courses << course
+    redirect_to :back, flash: {schedule: @schedule}
+    # redirect_to schedule_new_path(schedule: @schedule)
   end
 
   def create

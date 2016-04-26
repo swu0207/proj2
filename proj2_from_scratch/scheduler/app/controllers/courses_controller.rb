@@ -15,7 +15,6 @@ class CoursesController < ApplicationController
     end
 
 	def department
-		puts 'sldkfjlksdj'
 		@subject = params[:subject]
 		@courses = Course.where(:subject => params[:subject])
 		puts @courses

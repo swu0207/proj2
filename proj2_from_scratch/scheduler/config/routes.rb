@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get "schedules/new" => "schedules#new", as: 'schedule_new'
   get "schedules/create" => "schedules#create", as: 'schedule_create'
   get "schedules" => "schedules#index", as: 'schedule_index'
-  get "schedules/add_class" => "schedules#add_class", as: 'add_class'
+  patch "schedules/new/:id" => "schedules#add_class", as: 'add_class'
   post "schedules" => "schedules#create"
   get "courses/department/:subject" => "courses#department", as: 'course_department'
 
