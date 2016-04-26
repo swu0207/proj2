@@ -27,6 +27,7 @@ class CoursesController < ApplicationController
 
 	def create
 		@course = Course.create(course_params)
+		@course.email = current_admin.email
 		if @course.save
 			# @course.update(admin: current_admin)
 			redirect_to admin_show_path(id: current_admin.id)
@@ -41,10 +42,16 @@ class CoursesController < ApplicationController
   		redirect_to admin_show_path(id: current_admin.id), notice: "Courses imported."
 	end
 
+	def destroy
+		@course = Course.find(params[:id])
+		@course.destroy
+		redirect_to admin_show_path(id: current_admin.id), notice: "Course deleted."
+	end
+
 	private
 
   	def course_params
-    	params.require(:course).permit(:subject, :nbr, :title, :instructor)
+    	params.require(:course).permit(:subject, :nbr, :title, :instructor, :description, :start_time, :end_time, :days, :email, :location)
   	end
 
 end

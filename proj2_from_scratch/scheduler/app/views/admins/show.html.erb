@@ -1,8 +1,29 @@
-<h3>Admin</h3>
-<p>Email: <%= @admin.email if @admin.email %></p>
+<div style="margin-left: 50px;">
+	<h3>Admin</h3>
+	<p>Email: <%= @admin.email if @admin.email %></p>
 
-<% if admin_signed_in? %>
-	<%= button_to "Add Course", course_new_path, :class => "button medium", :method => :get %>
-<% end %>
+	<h3>Added Courses</h3>
+	<table class="table">
+		<tbody>
+			<% @courses.each do |c| %>
+				<tr>
+					<% if c.email == @admin.email %>
+	            		<%= link_to c.title, course_show_path(id: c.id) %>
+	            		<% if admin_signed_in? %>
+	            			<%= button_to "Delete Course", course_delete_path(id: c.id), :class => "button small", :method => 'delete' %>
+	            		<br>
+	            		<% end %>
+	            	<% end %>
+	        	</tr>		
+	        <% end %>
+	    </tbody>
+	</table>
 
-<%= link_to 'back', root_path %>
+	<h3>Want to add a new Course?</h3>
+	<p>Click on "Add Course" below!</p>
+	<% if admin_signed_in? %>
+		<%= button_to "Add Course", course_new_path, :class => "button medium", :method => :get %>
+	<% end %>
+
+	<%= link_to 'back', root_path %>
+</div>

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'admins/:id' => 'admins#show', as: 'admin_show'
   get "courses/new" => "courses#new", as: 'course_new'
   get "courses" => "courses#index", as: 'course_index'
-  get "courses/show" => "courses#show", as: 'course_show'
+  get "courses/:id" => "courses#show", as: 'course_show'
   post "courses" => "courses#create"
   get "schedules/new" => "schedules#new", as: 'schedule_new'
   get "schedules/create" => "schedules#create", as: 'schedule_create'
@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   post "schedules" => "schedules#create"
   get "courses/department/:subject" => "courses#department", as: 'course_department'
   get "schedules/:id" => "schedules#show", as: 'schedule_show'
+  delete "courses/:id" => "courses#destroy", as: 'course_delete'
 
   # resources :courses do
   #   collection { post :import }
