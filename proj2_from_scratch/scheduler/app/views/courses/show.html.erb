@@ -15,9 +15,15 @@
 						<% if c.user == 'admin' %>
 							<p><%= link_to c.email, admin_show_path(id: @admins.find_by(:email => c.email).id) %> said on <%= c.created_at %>: </p>
 		            		<p><%= c.text %></p>
+		            		<% if admin_signed_in? %>
+		            			<%= button_to "Delete Comment", comment_delete_path(id: c.id), :class => "button small", :method => 'delete' %>
+		            		<% end %>
 		            	<% elsif c.user == 'student' %>
 		            		<p><%= link_to c.email, student_show_path(id: @students.find_by(:email => c.email).id) %> said on <%= c.created_at %>: </p>
 		            		<p><%= c.text %></p>
+		            		<% if student_signed_in? %>
+		            			<%= button_to "Delete Comment", comment_delete_path(id: c.id), :class => "button small", :method => 'delete' %>
+		            		<% end %>
 		            	<% end %>
 		            <% end %>
 	        	</tr>

@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   delete "schedules/:id" => "schedules#destroy_schedule", as: 'schedule_delete'
   delete "schedules/edit/:id/:course_id" => "schedules#destroy", as: 'schedule_course_delete'
   post "comments/:id" => "comments#create", as: 'comments'
+  delete "comments/:id" => "comments#destroy", as: 'comment_delete'
 
   # resources :courses do
   #   collection { post :import }

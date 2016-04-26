@@ -26,9 +26,9 @@ Features:
 Admins and Students can log in
 Admins can create and delete courses
 Students can create and delete schedules as well as add and remove courses from their schedules
-Admins and Students can add comments about courses
+Admins and Students can add or delete comments about courses
 
 Division of Labor:
-Scarlett:
-Erica: seed file
-Morgan:
+Scarlett: schedule mvc, styling, routes
+Erica: seed file (import xlsx file)
+Morgan: comment mvc, routes
