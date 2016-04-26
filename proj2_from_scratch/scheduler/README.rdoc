@@ -23,12 +23,12 @@ Comment
 - belongs to a Course
 
 Features:
-Admins and Students can log in
-Admins can create and delete courses
-Students can create and delete schedules as well as add and remove courses from their schedules
-Admins and Students can add or delete comments about courses
+- Admins and Students can log in
+- Admins can create and delete courses
+- Students can create and delete schedules as well as add and remove courses from their schedules
+- Admins and Students can add or delete comments about courses
 
 Division of Labor:
-Scarlett: schedule mvc, styling for views, routes, views for student navigation, screencast
-Erica: seed file (import xlsx file)
-Morgan: comment mvc, routes, views for admin navigation, validations
+- Scarlett: schedule mvc, styling for views, routes, views for student navigation, screencast
+- Erica: seed file (import xlsx file), views for course navigation
+- Morgan: course mc, comment mvc, routes, views for admin navigation, validations
