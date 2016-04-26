@@ -12,7 +12,10 @@ class CoursesController < ApplicationController
 
 	def show
 		@comment = Comment.new
+		@comments = Comment.all
     	@course = Course.find(params[:id])
+    	@admins = Admin.all
+    	@students = Student.all
     end
 
 	def department
