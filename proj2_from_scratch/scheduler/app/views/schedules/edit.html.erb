@@ -16,6 +16,7 @@
   <% else %>
     <% @schedule.courses.each do |c| %>
       <%= c.subject %>, <%= c.nbr %>, <%= c.title %>
+      <%= button_to "Delete Course", schedule_course_delete_path(course_id: c.id, id: @schedule.id), :class => "button small", :method => 'delete' %>
       <br>
     <% end %>
   <% end %>

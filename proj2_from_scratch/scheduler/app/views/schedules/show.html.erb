@@ -9,7 +9,7 @@
           <h4> Courses </h4>
           <p> You currently have <%= @schedule.courses.count %> Courses </p>
           <% @schedule.courses.each do |c| %>
-            <%= c.subject %> <%= c.nbr %>: <%= c.title %>
+            <%= c.subject %> <%= c.nbr %>: <%= c.title %> <br>
           <% end %>
         </tbody>
       </table>
