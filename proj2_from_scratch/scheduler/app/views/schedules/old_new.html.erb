@@ -18,7 +18,7 @@
               <% @courses.each do |c| %>
                 <tr>
                   <%= c.id %>: <%= c.subject %> <%= c.nbr %>: <%= c.title %>
-                  <%= button_to "Add Class", add_class_path(id: c.id, schedule: @schedule), :class => "button small", :method => :patch %>
+                  <%= button_to "Add Class", add_class_path(id: c.id, schedule: @schedule), :class => "button small", :method => :get %>
                   <br>
                 </tr>
               <% end %>

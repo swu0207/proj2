@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+
+<h2> <%= @schedule.name %> </h2>
+<div class="column">
+  <%= form_tag(schedule_edit_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Courses", size: 50 %>
+  <%= submit_tag "Search", :class => 'button right small' %>
+  <% end %>
+</div>
+
+<div class="column">
+  <h4> Courses </h4>
+  <% if @schedule.courses.empty? %>
+     <p> There are no courses on here :'( </p>
+  <% else %>
+    <% @schedule.courses.each do |c| %>
+      <%= c.subject %>, <%= c.nbr %>, <%= c.title %>
+      <br>
+    <% end %>
+  <% end %>
+</div>
+
+<% if @courses %>
+  <h4>Results</h4>
+  <div class="container">
+    <div class="row">
+      <div class="column">
+        <table class="table">
+          <tbody>
+            <% @courses.each do |c| %>
+              <tr>
+                <%= c.id %>: <%= c.subject %> <%= c.nbr %>: <%= c.title %>
+                <%= button_to "Add Class", schedule_add_class_path(course_id: c.id, id: @schedule.id), :class => "button small", :method => :get %> <br>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+
+  </div>
+</div>

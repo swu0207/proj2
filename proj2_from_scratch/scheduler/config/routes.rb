@@ -13,10 +13,13 @@ Rails.application.routes.draw do
   get "schedules/new" => "schedules#new", as: 'schedule_new'
   get "schedules/create" => "schedules#create", as: 'schedule_create'
   get "schedules" => "schedules#index", as: 'schedule_index'
-  patch "schedules/new/:id" => "schedules#add_class", as: 'add_class'
   post "schedules" => "schedules#create"
   get "courses/department/:subject" => "courses#department", as: 'course_department'
   get "schedules/:id" => "schedules#show", as: 'schedule_show'
+  # get "schedules/:id/edit/:course_id" => "schedules#edit", as: 'schedule_edit'
+  get "schedules/:id/edit/" => "schedules#edit", as: 'schedule_edit'
+  get "schedules/:id/edit/add_class/:course_id" => "schedules#add_class", as: 'schedule_add_class'
+  # get "schedules/:schedule_id/edit/add_class/:id" => "schedules#add_class", as: 'schedule_add_class'
 
   # resources :courses do
   #   collection { post :import }

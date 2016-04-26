@@ -1,0 +1,19 @@
+
+
+<div class="container">
+  <div class="row">
+    <h2> <%= @schedule.name %> </h2>
+    <div class="column">
+      <table class="table">
+        <tbody>
+          <h4> Courses </h4>
+          <p> You currently have <%= @schedule.courses.count %> Courses </p>
+          <% @schedule.courses.each do |c| %>
+            <%= c.subject %> <%= c.nbr %>: <%= c.title %>
+          <% end %>
+        </tbody>
+      </table>
+      <%= button_to "Edit Schedule", schedule_edit_path(id: @schedule.id), :class => "button small", :method => :get %>
+    </div>
+  </div>
+</div>

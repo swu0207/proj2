@@ -11,26 +11,27 @@ class SchedulesController < ApplicationController
 
   def new
     @schedule = Schedule.new
-    # @schedule = Schedule.create
-    # @schedule = Schedule.new
-    # might have to do .create
-    # if params[:search]
-    #   @courses = Course.search(params[:search]).order("created_at DESC")
-    # else
-    #   @courses = Course.all.order('created_at DESC')
+  end
+
+  def edit
+    @schedule = Schedule.find(params[:id])
+    if params[:search]
+      @courses = Course.search(params[:search]).order("created_at DESC")
+    end
+    # if params[:course_id] != 0
+    #   course = Course.find(params[:course_id])
+    #   @schedule.courses << course
+    #   @schedule.save
+    # end
   end
 
   def add_class
-    if params[:schedule].nil?
-      @schedule = Schedule.new
-    else
-      @schedule = Schedule.find(params[:schedule])
-    end
+    @schedule = Schedule.find(params[:id])
     # @schedule = params[:schedule]
-    course = Course.find(params[:id])
+    course = Course.find(params[:course_id])
     @schedule.courses << course
-    redirect_to :back, flash: {schedule: @schedule}
-    # redirect_to schedule_new_path(schedule: @schedule)
+    @schedule.save
+    redirect_to schedule_edit_path(id: @schedule.id)
   end
 
   def create
@@ -43,19 +44,11 @@ class SchedulesController < ApplicationController
       flash[:error] = @course.errors.full_messages.to_sentence
       redirect_to schedule_new_path
     end
-
-    # @schedule.email = current_student.email
-    # if @schedule.save
-    #   redirect_to schedule_index_path
-    # else
-    #   flash[:error] = @schedule.errors.full_messages.to_sentence
-    #   render "new"
-    # end
   end
 
   private
 
   def schedule_params
-    params.require(:schedule).permit(:name)
+    params.require(:schedule).permit(:name, :email)
   end
 end
