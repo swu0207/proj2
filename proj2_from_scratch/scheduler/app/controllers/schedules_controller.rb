@@ -7,17 +7,17 @@ class SchedulesController < ApplicationController
   def show
       @schedule = Schedule.find(params[:id])
       # make sure it's the schedule of certain user
-    end
+  end
 
   def new
-    @schedule = Schedule.create
+    @schedule = Schedule.new
+    # @schedule = Schedule.create
     # @schedule = Schedule.new
     # might have to do .create
-    if params[:search]
-      @courses = Course.search(params[:search]).order("created_at DESC")
+    # if params[:search]
+    #   @courses = Course.search(params[:search]).order("created_at DESC")
     # else
     #   @courses = Course.all.order('created_at DESC')
-    end
   end
 
   def add_class
@@ -34,17 +34,28 @@ class SchedulesController < ApplicationController
   end
 
   def create
-    @schedule = Schedule.create
+    @schedule = Schedule.create(schedule_params)
     @schedule.email = current_student.email
     if @schedule.save
+      # @course.update(admin: current_admin)
       redirect_to schedule_index_path
     else
-      flash[:error] = @schedule.errors.full_messages.to_sentence
-      render "new"
+      flash[:error] = @course.errors.full_messages.to_sentence
+      redirect_to schedule_new_path
     end
+
+    # @schedule.email = current_student.email
+    # if @schedule.save
+    #   redirect_to schedule_index_path
+    # else
+    #   flash[:error] = @schedule.errors.full_messages.to_sentence
+    #   render "new"
+    # end
   end
 
+  private
+
   def schedule_params
-    params.require(:schedule).permit(:course_name)
+    params.require(:schedule).permit(:name)
   end
 end

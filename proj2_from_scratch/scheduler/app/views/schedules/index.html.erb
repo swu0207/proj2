@@ -8,8 +8,7 @@
           <% @schedules.each do |s| %>
             <tr>
               <% if s.email == current_student.email %>
-                <%= s.id %>
-                <%= s.courses.title %> <br>
+                <p><%= button_to s.name, schedule_show_path(id: s.id), :class => "button medium", :method => :get %></p>
               <% end %>
             </tr>
           <% end %>

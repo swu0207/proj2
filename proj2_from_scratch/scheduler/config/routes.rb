@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   patch "schedules/new/:id" => "schedules#add_class", as: 'add_class'
   post "schedules" => "schedules#create"
   get "courses/department/:subject" => "courses#department", as: 'course_department'
+  get "schedules/:id" => "schedules#show", as: 'schedule_show'
 
   # resources :courses do
   #   collection { post :import }
