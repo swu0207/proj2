@@ -18,11 +18,6 @@ class SchedulesController < ApplicationController
     if params[:search]
       @courses = Course.search(params[:search]).order("created_at DESC")
     end
-    # if params[:course_id] != 0
-    #   course = Course.find(params[:course_id])
-    #   @schedule.courses << course
-    #   @schedule.save
-    # end
   end
 
   def add_class
@@ -30,9 +25,14 @@ class SchedulesController < ApplicationController
     # @schedule = params[:schedule]
     @course = Course.find(params[:course_id])
     @schedule.courses << @course
-    @schedule.save
-    redirect_to schedule_edit_path(id: @schedule.id)
+    if @schedule.save
+      redirect_to schedule_edit_path(id: @schedule.id)
+    end
   end
+
+  # def edit_name
+  #   @schedule = Schedule.find(params[:id])
+  # end
 
   def create
     @schedule = Schedule.create(schedule_params)
@@ -41,10 +41,16 @@ class SchedulesController < ApplicationController
       # @course.update(admin: current_admin)
       redirect_to schedule_index_path
     else
-      flash[:error] = @course.errors.full_messages.to_sentence
+      flash[:error] = @schedule.errors.full_messages.to_sentence
       redirect_to schedule_new_path
     end
   end
+
+  def destroy_schedule
+		@schedule = Schedule.find(params[:id])
+		@schedule.destroy
+		redirect_to schedule_index_path(id: current_student.id), notice: "Course deleted."
+	end
 
   def destroy
     @schedule = Schedule.find(params[:id])

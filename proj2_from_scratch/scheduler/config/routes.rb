@@ -16,9 +16,11 @@ Rails.application.routes.draw do
   post "schedules" => "schedules#create"
   get "courses/department/:subject" => "courses#department", as: 'course_department'
   get "schedules/:id" => "schedules#show", as: 'schedule_show'
+  put "schedules/:id/edit_name" => "schedules#edit_name", as: 'schedule_edit_name'
   get "schedules/:id/edit/" => "schedules#edit", as: 'schedule_edit'
   get "schedules/:id/edit/add_class/:course_id" => "schedules#add_class", as: 'schedule_add_class'
   delete "courses/:id" => "courses#destroy", as: 'course_delete'
+  delete "schedules/:id" => "schedules#destroy_schedule", as: 'schedule_delete'
   delete "schedules/edit/:id/:course_id" => "schedules#destroy", as: 'schedule_course_delete'
   post "comments/:id" => "comments#create", as: 'comments'
 

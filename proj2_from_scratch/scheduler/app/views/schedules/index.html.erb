@@ -8,10 +8,16 @@
           <% @schedules.each do |s| %>
             <tr>
               <% if s.email == current_student.email %>
-                <p><%= button_to s.name, schedule_show_path(id: s.id), :class => "button medium", :method => :get %></p>
+
+                 <h3> <%= s.name %> </h3>
+                 <%= button_to 'View', schedule_show_path(id: s.id), :class => "button medium", :method => :get %> &nbsp;&nbsp;
+                 <%= button_to 'Delete', schedule_delete_path(id: s.id), :class => "button medium", :method => :delete %>
+                 <br>
               <% end %>
             </tr>
           <% end %>
+          <br> <br>
+          <%= button_to "Add New Schedule", schedule_new_path, :class => "button medium", :method => :get %>
         </tbody>
       </table>
     </div>

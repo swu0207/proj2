@@ -1,4 +1,4 @@
-<nav class="navbar navbar-styling" style="box-shadow: none;">
+<nav class="navbar navbar-styling" style="box-shadow: none; color: white;">
 <div class="container-fluid">
 <!-- Brand and toggle get grouped for better mobile display -->
 <div class="navbar-header">
@@ -11,12 +11,12 @@
 	<ul class="nav navbar-nav navbar-right">
 		<% if current_student %>
 			<li> <%= link_to "Profile", student_show_path(id: current_student.id), method: :get %> </li>
-			<li><a href="/students/edit">Edit</a></li>
+			<li><a href="/students/edit">Edit Account</a></li>
 			<li> <%= link_to "Logout", destroy_student_session_path, method: :delete %> </li>
 		<% else %>
 			<% if current_admin %>
 				<li> <%= link_to "Profile", admin_show_path(id: current_admin.id), method: :get %> </li>
-				<li><a href="/admins/edit">Edit</a></li>
+				<li><a href="/admins/edit">Edit Account</a></li>
 				<li> <%= link_to "Logout", destroy_admin_session_path, method: :delete %> </li>
 			<% else %>
 				<li> <%= link_to "Log In", home_login_path %> </li>

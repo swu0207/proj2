@@ -1,19 +1,30 @@
 
 
 <div class="container">
+
   <div class="row">
+    <%= button_to "Back to Schedules", schedule_index_path, :class => "button medium", :method => :get %>
+
+
     <h2> <%= @schedule.name %> </h2>
     <div class="column">
-      <table class="table">
-        <tbody>
-          <h4> Courses </h4>
-          <p> You currently have <%= @schedule.courses.count %> Courses </p>
+      <h3> Courses </h3>
+      <p style="font-size: 18px;"> You currently have <%= @schedule.courses.count %> Courses </p>
+      <table class="table" style="width: 60%">
+          <tr>
+              <th>Name</th>
+              <th>Course Title</th>
+          </tr>
           <% @schedule.courses.each do |c| %>
-            <%= c.subject %> <%= c.nbr %>: <%= c.title %> <br>
+          <tr>
+              <td> <%= c.subject %> <%= c.nbr %> </td>
+              <td> <%= c.title %> </td>
+          </tr>
           <% end %>
-        </tbody>
+        </table>
       </table>
-      <%= button_to "Edit Schedule", schedule_edit_path(id: @schedule.id), :class => "button small", :method => :get %>
+
+      <%= button_to "Edit Schedule", schedule_edit_path(id: @schedule.id), :class => "button medium", :method => :get %>
     </div>
   </div>
 </div>
