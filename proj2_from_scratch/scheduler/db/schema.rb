@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160425215004) do
+ActiveRecord::Schema.define(version: 20160426031025) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -32,6 +32,13 @@ ActiveRecord::Schema.define(version: 20160425215004) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
+  create_table "comments", force: :cascade do |t|
+    t.string   "text"
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "courses", force: :cascade do |t|
     t.string   "subject"
     t.string   "nbr"
@@ -46,6 +53,7 @@ ActiveRecord::Schema.define(version: 20160425215004) do
     t.string   "days"
     t.integer  "start_time"
     t.integer  "end_time"
+    t.string   "email"
   end
 
   create_table "courses_schedules", id: false, force: :cascade do |t|

@@ -1,0 +1,10 @@
+<div style="margin-left: 50px;">
+	<h1> <%= @course.subject %> <%= @course.nbr %>: <%= @course.title %> </h1>
+	<p> Location: <%= @course.location %> </p>
+	<p> Days: <%= @course.days %> </p>
+	<p> Time: <%= @course.start_time %> - <%= @course.end_time %> </p>
+	<p> Instructor: <%= @course.instructor %> </p>
+	<p> Description: <%= @course.description %> </p>
+
+	<%= button_to "Back", admin_show_path(id: current_admin.id), :class => "button medium", :method => :get %>
+</div>

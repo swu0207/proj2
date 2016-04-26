@@ -1,7 +1,9 @@
 class Course < ActiveRecord::Base
   # belongs_to :admin
+  validates :subject, presence: true
+  validates :nbr, presence: true
+  has_many :comments
   has_many :schedules, :autosave => true
-  # has_and_belongs_to_many :schedules, -> {uniq}, class_name: 'Schedule', join_table: 'courses_schedules', foreign_key: "schedules_id", :autosave => true
 
   def self.search(search)
     where("subject LIKE ? OR title LIKE ? OR nbr LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")

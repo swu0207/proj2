@@ -4,4 +4,5 @@ class Student < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :schedules
+  validates :email, presence: true
 end
