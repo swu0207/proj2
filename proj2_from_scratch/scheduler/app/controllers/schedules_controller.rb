@@ -49,7 +49,7 @@ class SchedulesController < ApplicationController
   def destroy_schedule
 		@schedule = Schedule.find(params[:id])
 		@schedule.destroy
-		redirect_to schedule_index_path(id: current_student.id), notice: "Course deleted."
+		redirect_to schedule_index_path(id: current_student.id), notice: "Schedule deleted."
 	end
 
   def destroy
@@ -58,7 +58,7 @@ class SchedulesController < ApplicationController
     # post.paragraphs.delete(Paragraph.find(paragraph_id))
     @schedule.save
 
-    redirect_to schedule_edit_path(id: @schedule.id), notice: "Course deleted."
+    redirect_to schedule_edit_path(id: @schedule.id), notice: "Course deleted from schedule."
   end
 
   private

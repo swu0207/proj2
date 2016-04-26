@@ -1,29 +1,40 @@
-<div style="margin-left: 50px;">
+<div class="container">
+  <div class="row">
+	<div style="margin-top: 50px; margin-bottom: 20px;"> <img src="http://placehold.it/150x150"></div>
 	<h3>Admin</h3>
 	<p>Email: <%= @admin.email if @admin.email %></p>
 
+
 	<h3>Added Courses</h3>
-	<table class="table">
-		<tbody>
+	<table class="table" style="width: 80%;">
+			<tr>
+					<th>Name</th>
+					<th>Course Title</th>
+					<th></th>
+			</tr>
 			<% @courses.each do |c| %>
 				<tr>
 					<% if c.email == @admin.email %>
-	            		<%= link_to c.title, course_show_path(id: c.id) %>
+									<td> <%= c.subject %> <%= c.nbr %> </td>
+	            		<td><%= c.title %> </td>
 	            		<% if admin_signed_in? %>
-	            			<%= button_to "Delete Course", course_delete_path(id: c.id), :class => "button small", :method => 'delete' %>
+	            			<td>
+											<div style="display: inline-block; height: 40px;"><%= button_to "Course Info", course_show_path(id: c.id), :class => "button small", :method => :get %></div>
+											<div style="display: inline-block; height: 40px;"><%= button_to "Delete Course", course_delete_path(id: c.id), :class => "button small", :method => 'delete' %></div>
+									</td>
 	            		<br>
 	            		<% end %>
 	            	<% end %>
-	        	</tr>		
+	        	</tr>
 	        <% end %>
-	    </tbody>
 	</table>
 
-	<h3>Want to add a new Course?</h3>
-	<p>Click on "Add Course" below!</p>
+	<br> <br>
+	<h3>Want to add a new Course?</h3> <br>
+	<p style="font-size: 16px;">Click on "Add Course" below!</p>
 	<% if admin_signed_in? %>
 		<%= button_to "Add Course", course_new_path, :class => "button medium", :method => :get %>
 	<% end %>
 
-	<%= link_to 'back', root_path %>
+	</div>
 </div>

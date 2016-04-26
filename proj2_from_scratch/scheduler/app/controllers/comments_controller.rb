@@ -16,8 +16,7 @@ class CommentsController < ApplicationController
 		if @comment.save
 			redirect_to course_show_path(id: @course.id)
 		else
-			flash[:error] = @comments.errors.full_messages.to_sentence
-			redirect_to admin_show_path(id: current_admin.id)
+			redirect_to :back, notice: "Comments cannot be empty."
 		end
 	end
 

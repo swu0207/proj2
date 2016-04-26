@@ -36,8 +36,7 @@ class CoursesController < ApplicationController
 			# @course.update(admin: current_admin)
 			redirect_to admin_show_path(id: current_admin.id)
 		else
-			flash[:error] = @course.errors.full_messages.to_sentence
-			redirect_to admin_show_path(id: current_admin.id)
+			redirect_to course_new_path(id: current_admin.id), notice: "Can't leave any parameters blank."
 		end
 	end
 

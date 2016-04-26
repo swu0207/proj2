@@ -3,13 +3,13 @@
     <h2>Browse by Department</h2>
     <div class="column">
       <table class="table">
-        <tbody>
           <% @courses.each do |c| %>
-            <tr>
+          <tr>
+            <td style="padding-left: 35px; letter-spacing: 2px;">
               <%= link_to c.subject, course_department_path(subject: c.subject) %> <br>
-            </tr>
+            </td>
+          <tr>
           <% end %>
-        </tbody>
       </table>
     </div>
   </div>

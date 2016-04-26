@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
 
-<h2> <%= @schedule.name %> </h2> 
+<h2> <%= @schedule.name %> </h2>
 
 <div class="column">
   <%= form_tag(schedule_edit_path, :method => "get", id: "search-form") do %>
@@ -27,8 +27,8 @@
           <td> <%= c.subject %> <%= c.nbr %> </td>
           <td> <%= c.title %> </td>
           <td>
-            <div style="display: inline-block; height: 40px;"><%= button_to "Delete Course", schedule_course_delete_path(course_id: c.id, id: @schedule.id), :class => "button small", :method => 'delete' %></div>
             <div style="display: inline-block; height: 40px;"><%= button_to "Course Info", course_show_path(id: c.id), :class => "button small", :method => :get %></div>
+            <div style="display: inline-block; height: 40px;"><%= button_to "Delete Course", schedule_course_delete_path(course_id: c.id, id: @schedule.id), :class => "button small", :method => 'delete' %></div>
           </td>
         </tr>
 

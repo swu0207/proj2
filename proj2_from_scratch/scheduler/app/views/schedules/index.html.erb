@@ -2,24 +2,26 @@
 <div class="container">
   <div class="row">
     <h2>All Schedules</h2>
-    <div class="column">
-      <table class="table">
-        <tbody>
+    <div class="column" style="margin-top: 20px;">
+        <table class="table" style="width: 60%">
+            <tr>
+                <th>Name</th>
+                <th>Course Title</th>
+            </tr>
           <% @schedules.each do |s| %>
             <tr>
               <% if s.email == current_student.email %>
 
-                 <h3> <%= s.name %> </h3>
-                 <%= button_to 'View', schedule_show_path(id: s.id), :class => "button medium", :method => :get %> &nbsp;&nbsp;
-                 <%= button_to 'Delete', schedule_delete_path(id: s.id), :class => "button medium", :method => :delete %>
-                 <br>
+                 <td> <div style="font-size: 24px; font-weight: 500;"> <%= s.name %> </div> </td>
+                 <td>
+                   <div style="display: inline-block; height: 40px;"><%= button_to 'View', schedule_show_path(id: s.id), :class => "button small", :method => :get %> </div>
+                   <div style="display: inline-block; height: 40px;"><%= button_to 'Delete', schedule_delete_path(id: s.id), :class => "button small", :method => :delete %></div>
+                </td>
               <% end %>
             </tr>
           <% end %>
-          <br> <br>
-          <%= button_to "Add New Schedule", schedule_new_path, :class => "button medium", :method => :get %>
-        </tbody>
       </table>
     </div>
+    <div style="margin-top: 30px;"><%= button_to "Add New Schedule", schedule_new_path, :class => "button medium", :method => :get %></div>
   </div>
 </div>

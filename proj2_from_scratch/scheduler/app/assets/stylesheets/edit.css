@@ -1,9 +1,19 @@
-
+.alert-box {
+  background-color: rgba(74, 171, 129, 0.6);
+  margin-top: -20px;
+  margin-bottom: 20px;
+  padding-left: 80px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 25px;
+  font-size: 16px;
+}
 
 .edit-container {
   margin-top: 40px;
   width: 400px;
-  margin: 0 auto;
+  margin-left: 100px;
+  /*margin: 0 auto;*/
   background: rgba(161, 201, 221, 0.6);
   border-radius: 25px;
   padding: 15px;
@@ -11,10 +21,23 @@
 
 .signup-container {
   width: 400px;
-  margin: 0 auto;
+  margin-left: 100px;
+  /*margin: 0 auto;*/
   background: rgba(161, 201, 221, 1);
   border-radius: 25px;
   padding: 25px;
+}
+
+.course-container {
+  width: 600px;
+  /*margin: 0 auto;*/
+  margin-left: 100px;
+  background: rgba(161, 201, 221, 1);
+  border-radius: 25px;
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .choose-container {
@@ -24,9 +47,6 @@
   border-radius: 25px;
   padding: 25px;
   text-align: center;
-}
-
-#search-form {
 }
 
 .button {
@@ -55,26 +75,35 @@
 	top:1px;
 }
 
+.home-container {
+
+}
+
 .home-header {
+  text-transform: uppercase;
+  position: absolute;
   font-size: 150px;
   text-align: center;
-  font-family: 'Luckiest Guy', sans-serif;
-  color: white;
-  /*margin-top: 150px;*/
-  margin-top: -20px;
-  padding-top: 50px;
-  padding-left: 200px;
+  font-family: 'Lato', sans-serif;  color: white;
+  /*margin-top: -20px;*/
+  padding-top: 150px;
+  padding-left: 500px;
   opacity: 0.9;
+  color: #333333;
 }
 
 .home-page {
+  height: 600px;
+  margin: 0;
   background: url("home-page-banner.jpg");
   background-repeat: no-repeat;
-  opacity: 0.7;
+  opacity: 0.6;
 }
+
 
 .navbar-styling {
   background-color: rgb(212, 230, 243);
+  color: white;
 }
 
 .table {
@@ -91,6 +120,6 @@ th {
   background-color: rgb(212, 230, 243);
 }
 
- tr:hover {
+tr:hover {
    background-color: #f5f5f5;
- }
+}

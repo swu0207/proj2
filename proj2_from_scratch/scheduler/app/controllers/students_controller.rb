@@ -4,5 +4,6 @@ class StudentsController < ApplicationController
 
   def show
     @student = Student.find(params[:id])
+    @main_schedule =  Schedule.find_by_email(@student.email)
   end
 end

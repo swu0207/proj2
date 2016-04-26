@@ -1,5 +1,10 @@
-<div style="margin-left: 50px;">
-	<h3>Create a New Course!</h3>
+<div style="margin-left: 100px;">
+	<%= button_to "Back", admin_show_path(id: current_admin.id), :class => "button medium", :method => :get %>
+ </div>
+
+<div class="course-container" style="margin-bottom: 50px;">
+
+	<h3>Create a New Course!</h3><br>
 	<%= form_for @course, :url => courses_path do |c| %>
   		<div class="form-group">
         	<%= c.label :subject, 'Subject (e.g. Astronomy)' %>
@@ -39,4 +44,5 @@
 	    </div>
 	    <%= c.submit 'Submit', :class => 'button right' %>
 	<% end %>
+</div>
 </div>

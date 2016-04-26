@@ -1,8 +1,8 @@
 Title: Scheduler
 Team Members: Scarlett Wu, Erica Meng, Morgan Lee
-Demo Link: 
+Demo Link:
 
-Idea: An application where administrators can add and remove courses and other users (students) can make schedules and add or remove courses to their desired schedules. 
+Idea: An application where administrators can add and remove courses and other users (students) can make schedules and add or remove courses to their desired schedules.
 
 Models and Description:
 Admin
@@ -29,6 +29,6 @@ Students can create and delete schedules as well as add and remove courses from 
 Admins and Students can add or delete comments about courses
 
 Division of Labor:
-Scarlett: schedule mvc, styling, routes
+Scarlett: schedule mvc, styling, routes, views for student navigation
 Erica: seed file (import xlsx file)
-Morgan: comment mvc, routes
+Morgan: comment mvc, routes, views for admin navigation
