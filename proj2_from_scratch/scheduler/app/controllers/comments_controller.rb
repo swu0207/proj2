@@ -21,7 +21,13 @@ class CommentsController < ApplicationController
 		end
 	end
 
-	# should have delete?
+	def destroy
+		@comment = Comment.find(params[:id])
+		@course = Course.find_by(:id => @comment.course_id)
+		@course.comments.find(params[:id]).destroy
+		@course.save
+		redirect_to course_show_path(id: @course.id), notice: "Comment deleted."
+	end
 
 	private
 
