@@ -2,7 +2,7 @@ class Course < ActiveRecord::Base
   # belongs_to :admin
   validates :subject, presence: true
   validates :nbr, presence: true
-  has_many :comments
+  has_many :comments, :autosave => true
   has_many :schedules, :autosave => true
 
   def self.search(search)
