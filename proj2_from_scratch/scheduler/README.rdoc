@@ -1,6 +1,6 @@
 Title: Scheduler
 Team Members: Scarlett Wu, Erica Meng, Morgan Lee
-Demo Link:
+Demo Link: https://drive.google.com/a/berkeley.edu/file/d/0B0FXvhhWmkL3R2E4ZjlodG5ISzQ/view?usp=sharing
 
 Idea: An application where administrators can add and remove courses and other users (students) can make schedules and add or remove courses to their desired schedules.
 
@@ -29,6 +29,6 @@ Students can create and delete schedules as well as add and remove courses from 
 Admins and Students can add or delete comments about courses
 
 Division of Labor:
-Scarlett: schedule mvc, styling, routes, views for student navigation
+Scarlett: schedule mvc, styling for views, routes, views for student navigation, screencast
 Erica: seed file (import xlsx file)
-Morgan: comment mvc, routes, views for admin navigation
+Morgan: comment mvc, routes, views for admin navigation, validations
