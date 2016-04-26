@@ -1,0 +1,13 @@
+<div class="edit-container">
+  <div class="authform">
+    <h3>Edit Name</h3>
+    <%= form_for(@schedule, :url => schedule_edit_name_path(@schedule.id), :html => { :method => :put, :role => 'form'}) do |f| %>
+      <fieldset>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, :autofocus => true, class: 'form-control' %>
+      </div>
+      </fieldset>
+      <%= f.submit 'Update', :class => 'button right' %>
+    <% end %>
+  </div>

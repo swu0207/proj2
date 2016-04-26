@@ -1,0 +1,21 @@
+<!-- <p><%= Student.count %> student(s) registered</p>
+<p><%= Admin.count %> admin(s) registered</p>
+<p><%= Course.count %> course(s) added </p> -->
+<div class="home-container">
+  <div class="home-page" style="text-align: center;">
+  <!-- <p><%= Student.count %> student(s) registered</p>
+  <p><%= Admin.count %> admin(s) registered</p>
+  <p><%= Course.count %> course(s) added </p> -->
+      <div style="height: 50px; background-color: white;"></div>
+      <div class="home-container" style="height: 400px;">
+        <h1 class="home-header"> SCHEDULER </h1>
+      </div>
+      <div style="display: inline-block; font-size: 60px;"> <%= button_to "Log In", home_login_path, :class => "button", method: :get %> </div>
+      <div style="display: inline-block;"> <%= button_to "Sign Up", home_signup_path, :class => "button", method: :get %> </div>
+
+      <div class="bottom-container">
+      </div>
+  </div>
+
+
+</div>
