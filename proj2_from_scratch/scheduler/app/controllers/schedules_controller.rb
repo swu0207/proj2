@@ -28,8 +28,8 @@ class SchedulesController < ApplicationController
   def add_class
     @schedule = Schedule.find(params[:id])
     # @schedule = params[:schedule]
-    course = Course.find(params[:course_id])
-    @schedule.courses << course
+    @course = Course.find(params[:course_id])
+    @schedule.courses << @course
     @schedule.save
     redirect_to schedule_edit_path(id: @schedule.id)
   end
@@ -44,6 +44,15 @@ class SchedulesController < ApplicationController
       flash[:error] = @course.errors.full_messages.to_sentence
       redirect_to schedule_new_path
     end
+  end
+
+  def destroy
+    @schedule = Schedule.find(params[:id])
+    @schedule.courses.delete(params[:course_id])
+    # post.paragraphs.delete(Paragraph.find(paragraph_id))
+    @schedule.save
+
+    redirect_to schedule_edit_path(id: @schedule.id), notice: "Course deleted."
   end
 
   private
