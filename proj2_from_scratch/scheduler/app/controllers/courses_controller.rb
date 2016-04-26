@@ -11,6 +11,7 @@ class CoursesController < ApplicationController
   	end
 
 	def show
+		@comment = Comment.new
     	@course = Course.find(params[:id])
     end
 

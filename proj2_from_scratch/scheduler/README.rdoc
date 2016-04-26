@@ -13,19 +13,22 @@ Course
 - has subject, number (nbr), title, description, start time, end time, location, days of the week (days), and instructor
 - has email (denotes which Admin created it)
 - belongs to a Schedule
+- has many comments
 Schedule
 - has name and email (denotes which Student created it)
 - belongs to a Student
 - has many courses
 Comment
+- has text and email (denotes which User created it)
+- belongs to a Course
 
 Features:
 Admins and Students can log in
 Admins can create and delete courses
 Students can create and delete schedules as well as add and remove courses from their schedules
-Students can add comments about classes???
+Admins and Students can add comments about courses
 
 Division of Labor:
 Scarlett:
-Erica:
+Erica: seed file
 Morgan:

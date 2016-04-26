@@ -6,7 +6,9 @@
         <tbody>
           <% @courses.each do |c| %>
             <tr>
-              <%= c.subject %> <%= c.nbr%>: <%= c.title%> <br>
+              <%= c.subject %> <%= c.nbr%>: <%= c.title%> 
+              <%= link_to "More Info", course_show_path(id: c.id) %>
+              <br>
             </tr>
           <% end %>
         </tbody>

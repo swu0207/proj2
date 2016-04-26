@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get "schedules/:id/edit/" => "schedules#edit", as: 'schedule_edit'
   get "schedules/:id/edit/add_class/:course_id" => "schedules#add_class", as: 'schedule_add_class'
   delete "courses/:id" => "courses#destroy", as: 'course_delete'
+  post "comments/:id" => "comments#create", as: 'comments'
 
   # resources :courses do
   #   collection { post :import }

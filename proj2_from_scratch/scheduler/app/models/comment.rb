@@ -1,5 +1,5 @@
 class Comment < ActiveRecord::Base
-	belongs_to :student
+	belongs_to :course
 	validates :email, presence: true
 	validates :text, presence: true
 end
