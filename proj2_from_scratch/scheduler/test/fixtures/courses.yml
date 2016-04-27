@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  term: MyString
+  class_nbr: 1
+  subject: MyString
+  nbr: MyString
+  section: 1
+  type: 
+  title: MyString
+  units: 1
+  facility: MyString
+  days: MyString
+  start_time: MyString
+  end_time: MyString
+  instructor: MyString
+
+two:
+  term: MyString
+  class_nbr: 1
+  subject: MyString
+  nbr: MyString
+  section: 1
+  type: 
+  title: MyString
+  units: 1
+  facility: MyString
+  days: MyString
+  start_time: MyString
+  end_time: MyString
+  instructor: MyString

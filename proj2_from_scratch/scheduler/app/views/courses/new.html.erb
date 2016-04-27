@@ -1,0 +1,48 @@
+<div style="margin-left: 100px;">
+	<%= button_to "Back", admin_show_path(id: current_admin.id), :class => "button medium", :method => :get %>
+ </div>
+
+<div class="course-container" style="margin-bottom: 50px;">
+
+	<h3>Create a New Course!</h3><br>
+	<%= form_for @course, :url => courses_path do |c| %>
+  		<div class="form-group">
+        	<%= c.label :subject, 'Subject (e.g. Astronomy)' %>
+        	<%= c.text_field :subject, :autofocus => true, class: 'form-control' %>
+      	</div>
+		<div class="form-group">
+	      	<%= c.label :nbr, 'Number (e.g. 100)' %>
+	      	<%= c.text_field :nbr, :autofocus => true, class: 'form-control' %>
+	    </div>
+      	<div class="form-group">
+        	<%= c.label :title, 'Title (e.g. Constellations and Planets)' %>
+        	<%= c.text_field :title, :autofocus => true, class: 'form-control' %>
+      	</div>
+	    <div class="form-group">
+	      	<%= c.label :instructor, 'Instructor (e.g. Yeung)' %>
+	      	<%= c.text_field :instructor, class: 'form-control' %>
+	    </div>
+      	<div class="form-group">
+        	<%= c.label :days, 'Days (e.g. MWF, TuTh)' %>
+        	<%= c.text_field :days, :autofocus => true, class: 'form-control' %>
+      	</div>
+	    <div class="form-group">
+	      	<%= c.label :start_time, 'Time Start (e.g. 9)' %>
+	      	<%= c.text_field :start_time, :autofocus => true, class: 'form-control' %>
+	    </div>
+	    <div class="form-group">
+	      	<%= c.label :end_time, 'Time End (e.g. 10)' %>
+	      	<%= c.text_field :end_time, :autofocus => true, class: 'form-control' %>
+	    </div>
+	    <div class="form-group">
+	      	<%= c.label :location, 'Location' %>
+	      	<%= c.text_field :location, :autofocus => true, class: 'form-control' %>
+	    </div>
+	    <div class="form-group">
+	      	<%= c.label :description, 'Description' %>
+	      	<%= c.text_field :description, class: 'form-control' %>
+	    </div>
+	    <%= c.submit 'Submit', :class => 'button right' %>
+	<% end %>
+</div>
+</div>

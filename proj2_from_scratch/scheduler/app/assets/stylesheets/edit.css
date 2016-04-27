@@ -1,0 +1,125 @@
+.alert-box {
+  background-color: rgba(74, 171, 129, 0.6);
+  margin-top: -20px;
+  margin-bottom: 20px;
+  padding-left: 80px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 25px;
+  font-size: 16px;
+}
+
+.edit-container {
+  margin-top: 40px;
+  width: 400px;
+  margin-left: 100px;
+  /*margin: 0 auto;*/
+  background: rgba(161, 201, 221, 0.6);
+  border-radius: 25px;
+  padding: 15px;
+}
+
+.signup-container {
+  width: 400px;
+  margin-left: 100px;
+  /*margin: 0 auto;*/
+  background: rgba(161, 201, 221, 1);
+  border-radius: 25px;
+  padding: 25px;
+}
+
+.course-container {
+  width: 600px;
+  /*margin: 0 auto;*/
+  margin-left: 100px;
+  background: rgba(161, 201, 221, 1);
+  border-radius: 25px;
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.choose-container {
+  width: 600px;
+  margin: 0 auto;
+  background: rgba(161, 201, 221, 1);
+  border-radius: 25px;
+  padding: 25px;
+  text-align: center;
+}
+
+.button {
+	background-color: rgb(112, 165, 191);
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:18px;
+	padding:9px 23px;
+  margin-bottom: 10px;
+  border: none;
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+}
+
+.button:hover {
+	background-color:#0688fa;
+}
+
+.button:active {
+	position:relative;
+	top:1px;
+}
+
+.home-container {
+
+}
+
+.home-header {
+  text-transform: uppercase;
+  position: absolute;
+  font-size: 150px;
+  text-align: center;
+  font-family: 'Lato', sans-serif;  color: white;
+  /*margin-top: -20px;*/
+  padding-top: 150px;
+  padding-left: 500px;
+  opacity: 0.9;
+  color: #333333;
+}
+
+.home-page {
+  height: 600px;
+  margin: 0;
+  background: url("home-page-banner.jpg");
+  background-repeat: no-repeat;
+  opacity: 0.6;
+}
+
+
+.navbar-styling {
+  background-color: rgb(212, 230, 243);
+  color: white;
+}
+
+.table {
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+th, td {
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: rgb(212, 230, 243);
+}
+
+tr:hover {
+   background-color: #f5f5f5;
+}

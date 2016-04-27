@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <h2>Browse by Department</h2>
+    <div class="column">
+      <table class="table">
+          <% @courses.each do |c| %>
+          <tr>
+            <td style="padding-left: 35px; letter-spacing: 2px;">
+              <%= link_to c.subject, course_department_path(subject: c.subject) %> <br>
+            </td>
+          <tr>
+          <% end %>
+      </table>
+    </div>
+  </div>
+</div>

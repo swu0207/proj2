@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <h2><%= @subject %></h2>
+      <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Course Title</th>
+            <th>Options</th>
+        </tr>
+          <% @courses.each do |c| %>
+            <tr>
+              <td><%= c.subject %> <%= c.nbr%> </td>
+              <td><%= c.title%> </td>
+              <td><div style="display: inline-block; height: 40px;">
+                <%= button_to "More Info", course_show_path(id: c.id), :class => "button small", :method => :get %>
+              </div></td>
+            </tr>
+          <% end %>
+      </table>
+  </div>
+</div>
