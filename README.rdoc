@@ -1,6 +1,7 @@
 Title: Scheduler
 Team Members: Scarlett Wu, Erica Meng, Morgan Lee
-Demo Link: https://drive.google.com/a/berkeley.edu/file/d/0B0FXvhhWmkL3R2E4ZjlodG5ISzQ/view?usp=sharing
+Demo Link: evening-brook-95844.herokuapp.com
+Screencast Link: https://drive.google.com/a/berkeley.edu/file/d/0B0FXvhhWmkL3R2E4ZjlodG5ISzQ/view?usp=sharing
 
 Idea: An application where administrators can add and remove courses and other users (students) can make schedules and add or remove courses to their desired schedules.
 
